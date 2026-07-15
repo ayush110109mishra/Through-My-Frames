@@ -1,0 +1,222 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+     font-family: Arial, Helvetica, sans-serif;
+}
+
+.navbar ul{
+    min-height:55px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border:  none;
+    background-color: white;
+     padding: 15px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    list-style-type: none;
+    text-decoration: none;
+    flex-wrap: wrap;
+     
+}
+
+li a{
+    text-decoration: none;
+     transition: 0.3s;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+li a:hover{
+    color: #2563eb;
+    text-decoration: underline;
+    transition: smooth 0.3s;
+     }
+.active{
+
+    color:#2563eb;
+
+    border-bottom:3px solid #2563eb;
+
+    padding-bottom:6px;
+
+}
+     
+
+
+
+h1{
+    margin: 10px;
+    text-align: center; 
+}
+
+.about-content{
+    width: 90%;
+    max-width: 1200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 60px;
+    align-items: flex-start;
+    margin: 30px auto;
+}
+.banner{
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    padding-left: 30px;
+     align-items: center;
+     width: 380px;
+    margin-right: 30px;
+    
+}
+
+
+.heading{
+    text-align: center;
+    margin-bottom: 20px;
+}
+img{
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+    width:340px; 
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    border: 5px solid white;
+    border-radius: 50%;
+    margin-top: 30px;
+     transition: 0.3s ease;
+    display:block;
+}
+
+    #my:hover{
+        transform:scale(1.05);
+    }
+
+#intro{
+    width:50%;
+    max-width: 600px;
+    font-size: 18px;
+    line-height: 1.8;
+    text-align: justify;
+    
+     
+}
+#bottom{
+    display: flex;
+    margin: 20px;
+    line-height: 1.8;
+    flex-direction: column;
+    align-items: center;
+}
+
+ 
+
+
+footer{
+    text-align: center;
+    padding: 20px;
+    background-color: #f8fafc;
+    color: #000000;
+    font-size: 14px;
+}
+
+
+
+/* 📱 --------------------------------------------
+----------------------Tablet-------------------- */
+
+@media (max-width:768px){
+
+.about-content{
+
+flex-direction:column;
+
+align-items:center;
+
+text-align:center;
+
+gap:30px;
+
+}
+
+.banner{
+
+width:100%;
+
+padding-left:0;
+
+margin:0;
+
+}
+
+#intro{
+
+width:90%;
+
+text-align:center;
+
+font-size:16px;
+
+}
+
+img{
+
+width:250px;
+
+height:250px;
+
+}
+
+.navbar ul{
+
+gap:12px;
+
+}
+
+footer{
+
+padding:15px;
+
+font-size:13px;
+
+}
+
+}
+
+/* --------------------------------------------------------
+---------📱 Mobile------------------------------------------- */
+
+@media (max-width:480px){
+
+h1{
+
+font-size:28px;
+
+}
+
+img{
+
+width:190px;
+
+height:190px;
+
+}
+
+#intro{
+
+font-size:15px;
+
+line-height:1.7;
+
+}
+
+footer{
+
+padding:15px;
+
+font-size:13px;
+
+}
+
+}

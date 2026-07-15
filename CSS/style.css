@@ -1,0 +1,306 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+body{
+    background-color:#f8fafc;
+    color: #000000;
+    line-height: 1.7;
+    font-family: Arial, Helvetica, sans-serif;
+    background-size: cover;
+}
+h1{
+    text-align: center;
+    font-weight: bold;
+    margin: 10px;
+    text-transform: capitalize;
+    letter-spacing: 1px;
+     
+
+}
+.navbar ul{
+    min-height:55px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border:  none;
+    background-color: white;
+     padding: 15px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 50px;
+    list-style-type: none;
+    text-decoration: none;
+    flex-wrap: wrap;
+     
+}
+
+.theme-container{
+    display:flex;
+    justify-content:flex-end;
+    margin:20px 40px;
+}
+
+#themeBtn{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px 22px;
+    border-radius:30px;
+    font-size:16px;
+    font-weight:600;
+    cursor:pointer;
+    transition:.3s;
+}
+
+#themeBtn:hover{
+    background:#1d4ed8;
+    transform:scale(1.05);
+}
+
+
+li a{
+    text-decoration: none;
+     transition: 0.3s;
+    text-transform: capitalize;
+    font-size: 20px;
+}
+
+li a:hover{
+    color: #2563eb;
+    text-decoration: underline;
+    transition: smooth 0.3s;
+     }
+
+.active{
+
+    color:#2563eb;
+
+    border-bottom:3px solid #2563eb;
+
+    padding-bottom:6px;
+
+}
+ .content{
+    background: rgba(255, 255, 255, 0.75);
+    border-radius: 20px;
+    padding: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: static;
+    margin: 10px;
+    gap: 60px;
+
+ }
+ 
+ img{
+    aspect-ratio: 1/1;
+    object-fit: cover;
+    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
+    width:320px; 
+    border: 5px solid white;
+    border-radius: 50%;
+    margin-top: 100px;
+    display:block;
+     transition: 0.3;}
+
+    .profile:hover{
+        transform:scale(1.05);
+    }
+
+#intro{ font-size: 18px; 
+    color: #444;
+    line-height: 1.8;     /*photo ke bagal me itni sgandaar tarike se content kaise likha hai. */
+    text-align: justify;
+    max-width:650px;
+}
+ 
+
+.button{
+   display: flex;
+   justify-content: center;
+    align-items: center;
+    
+}  
+#gallery-button{
+    width: 200px;
+    text-align: center;
+    padding: 15px 40px;
+    font-size: 18px;
+    border-radius: 10px;
+    background-color: #2563eb;
+    transition: 0.3s;
+    cursor: pointer;
+    color: white;
+}
+button:hover{
+    background-color: #1d4ed8;
+    cursor: pointer;
+    scale: 1.05;
+}
+
+
+footer{
+    text-align: center;
+    padding: 20px;
+    background-color: #f8fafc;
+    color: #000000;
+    font-size: 14px;
+}
+
+
+.dark{
+    background-color:#111827;
+    color:white;
+}
+  
+.dark .navbar ul{
+    background:#1f2937;
+    color:white;
+}
+
+/*
+.dark .content{
+    background:#1e293b;
+}
+*/
+
+.dark .footer{
+    background:#1f2937;
+}  
+
+/* 📱 Bade Mobile
++
+📱 Tablet (Portrait Mode)
+----------------------------------resposive design ----------------------- */
+
+
+
+
+@media (max-width:768px){
+
+    h1{
+        font-size:34px;
+    }
+
+    .content{
+        flex-direction:column;
+        align-items:center;
+        text-align:center;
+    }
+
+    .profile{
+        width:240px;
+
+        height:240px;
+
+        margin-top: 20px;
+
+        margin-bottom:20px;
+    }
+
+    .navbar ul{
+        gap:10px;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+        padding:15px;
+    }
+
+    .content{
+
+padding:20px;
+
+gap:30px;
+
+}
+
+#intro{
+
+text-align:center;
+
+font-size:16px;
+
+}
+
+#gallery-button{
+
+width:180px;
+
+font-size:16px;
+
+}
+
+footer{
+
+padding:15px;
+
+font-size:13px;
+
+}
+
+}
+
+
+ 
+
+/* 
+👉 Chhote Mobile Phones----------------for tablet------------------------- */
+
+
+
+@media (max-width:480px){
+
+    h1{
+        font-size:28px;
+    }
+
+    header p{
+        font-size:18px;
+    }
+
+    
+    .profile{
+
+width:180px;
+
+height:180px;
+
+}
+
+    .content{
+
+padding:20px;
+
+gap:30px;
+
+}
+
+#intro{
+
+text-align:center;
+
+font-size:16px;
+
+}
+
+#gallery-button{
+
+width:180px;
+
+font-size:16px;
+
+}
+
+footer{
+
+padding:15px;
+
+font-size:13px;
+
+}
+
+}
