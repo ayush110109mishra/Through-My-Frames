@@ -1,78 +1,200 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About</title>
-    <link rel="stylesheet" href="../CSS/aboutcss.css">
+
+    <title>About | Through My Frames</title>
+
+    <link rel="stylesheet" href="../CSS/style.css">
 </head>
+
 <body>
 
 
-     <div class="navbar">
-         <ul>
-            <li><a href="index.html" target="main">Home</a></li>
-            <li><a href="about.html" target="main"  class="active">About</a></li>
-            <li><a href="gallery.html" target="main">Gallery</a></li>
-            <li><a href="contact.html" target="main">Contact</a></li>
-             
-        </ul>
-         </div>
+    <!-- HEADER -->
+
+    <header class="site-header">
+
+        <a class="brand" href="index.html">
+            throughmyframes
+        </a>
 
 
-    <h1> About Me</h1>
+        <button class="theme-btn" id="themeBtn" type="button">
+            🌙 Dark Mode
+        </button>
 
-    <div class="about-content">
+    </header>
 
-        <div class="banner"> 
 
- <div class="heading">  <h2>The story behind Through My Frames</h2>  
-    </div>
+    <main>
 
-    <div class="pic">
-        <img id="my" src="../images/ayush_About.jpeg" alt="ayush">
-         </div>
-    <p id="bottom">       📷 Photography
-    <br>
-|                            💻 Web Development
-    <br>
-|                             🌿 Storytelling</p>
-    </div>
 
-              
-    <p id="intro" >
-         
-        Hi, I'm Ayush Mishra, a first-year Mechanical Engineering student with a deep passion 
-        for photography and web development. I believe every photograph holds a story, and 
-        through my camera, I love capturing moments that deserve to be remembered.
-<br>
-        Photography has taught me to notice the beauty in simple things—whether it's a quiet
-         morning, a rainy day, a village road, or the colors of nature. Every picture I take 
-         is a memory that reflects how I see the world.
-<br>
-        Alongside photography, I enjoy learning web development. I love turning ideas into
-        websitesand continuously improving myskills in HTML, CSS, and JavaScript. Building
-        projects allows me to combine creativity with technology, and every new  feature I
-        create teaches me something valuable.
-<br>
-        Through My Frames is more than just a photography portfolio. It is a collection of my 
-        memories,my learning journey,and my growth as both a photographer and a developer.
-        Thank you for taking the time to visit my website—I hope you enjoy exploring it as
-        much as I enjoyed creating it.
-<br>
-         "Every frame tells a story, and this is mine."
-<br>
-<br>
-      — Ayush Mishra <br>
-Photographer • Mechanical Engineering Student • Aspiring Software Engineer
-    </p>
-    </div>
+        <!-- PAGE HEADING -->
 
-    <footer>
-        <p> © 2026 Through My Frames
-All Rights Reserved.</p>
+        <section class="page-heading">
+
+            <p class="eyebrow">
+                The person behind the frames
+            </p>
+
+
+            <h1>
+                About Me
+            </h1>
+
+
+            <p>
+                Photography, coding and a little bit of storytelling.
+            </p>
+
+        </section>
+
+
+        <!-- NAVBAR -->
+
+        <nav class="navbar" aria-label="Main navigation">
+
+            <a href="index.html">
+                Home
+            </a>
+
+
+            <a class="active" href="about.html">
+                About
+            </a>
+
+
+            <a href="gallery.html">
+                Gallery
+            </a>
+
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </nav>
+
+
+        <!-- ABOUT SECTION -->
+
+        <section class="about-layout">
+
+
+            <!-- LEFT SIDE -->
+
+            <div class="about-visual">
+
+                <p class="eyebrow">
+                    The story behind
+                </p>
+
+
+                <h2>
+                    Through My Frames
+                </h2>
+
+
+                <img
+                    src="../images/ayush_About.jpeg"
+                    alt="Ayush Mishra"
+                    class="about-image"
+                >
+
+
+                <div class="interest-list">
+
+                    <span>
+                        📷 Photography
+                    </span>
+
+
+                    <span>
+                        💻 Web Development
+                    </span>
+
+
+                    <span>
+                        🌿 Storytelling
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <!-- RIGHT SIDE -->
+
+            <article class="about-copy">
+
+                <p>
+                    Hi, I'm Ayush Mishra, a first-year Mechanical Engineering
+                    student with a deep passion for photography and web development.
+                </p>
+
+
+                <p>
+                    I believe every photograph holds a story. Through my camera,
+                    I love capturing moments that deserve to be remembered.
+                </p>
+
+
+                <p>
+                    Photography has taught me to notice the beauty in simple things—
+                    a quiet morning, a rainy day, a village road or the colours of
+                    nature. Every picture I take is a memory that reflects how I
+                    see the world.
+                </p>
+
+
+                <p>
+                    Alongside photography, I enjoy learning web development.
+                    I love turning ideas into websites and continuously improving
+                    my skills in HTML, CSS and JavaScript.
+                </p>
+
+
+                <p>
+                    Through My Frames is more than a photography portfolio.
+                    It is a collection of my memories, my learning journey and
+                    my growth as both a photographer and a developer.
+                </p>
+
+
+                <blockquote>
+
+                    “Every frame tells a story, and this is mine.”
+
+                    <cite>
+                        — Ayush Mishra
+                    </cite>
+
+                </blockquote>
+
+            </article>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 Through My Frames • All Rights Reserved.
+        </p>
+
     </footer>
 
 
+    <script src="../Javascript/script.js"></script>
+
 </body>
+
 </html>

@@ -1,306 +1,546 @@
-*{
-    padding: 0;
+ /* =========================================
+   THROUGH MY FRAMES — GLOBAL DESIGN SYSTEM
+========================================= */
+
+:root {
+    --primary: #2563eb;
+    --primary-dark: #1d4ed8;
+    --bg: #f8fafc;
+    --surface: #ffffff;
+    --surface-soft: #f1f5f9;
+    --text: #0f172a;
+    --muted: #64748b;
+    --border: #e2e8f0;
+    --shadow: 0 12px 35px rgba(15, 23, 42, 0.08);
+    --shadow-hover: 0 20px 45px rgba(15, 23, 42, 0.14);
+    --radius: 22px;
+    --transition: 0.3s ease;
+}
+
+* {
     margin: 0;
+    padding: 0;
     box-sizing: border-box;
-    font-family: Arial, Helvetica, sans-serif;
 }
-body{
-    background-color:#f8fafc;
-    color: #000000;
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
     line-height: 1.7;
-    font-family: Arial, Helvetica, sans-serif;
-    background-size: cover;
+    transition: background-color var(--transition), color var(--transition);
 }
-h1{
-    text-align: center;
-    font-weight: bold;
-    margin: 10px;
-    text-transform: capitalize;
+
+a {
+    color: inherit;
+}
+
+button,
+input,
+textarea {
+    font: inherit;
+}
+
+button {
+    cursor: pointer;
+}
+
+.site-header {
+    width: min(1200px, 92%);
+    margin: auto;
+    padding: 24px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand {
+    color: var(--primary);
+    text-decoration: none;
+    font-size: 1.15rem;
+    font-weight: 700;
     letter-spacing: 1px;
-     
-
 }
-.navbar ul{
-    min-height:55px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
-    border:  none;
-    background-color: white;
-     padding: 15px 0px;
+
+.theme-btn {
+    padding: 10px 18px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--text);
+    font-weight: 600;
+    transition: transform var(--transition), border-color var(--transition);
+}
+
+.theme-btn:hover {
+    transform: translateY(-2px);
+    border-color: var(--primary);
+}
+
+.hero-heading,
+.page-heading {
+    width: min(1000px, 92%);
+    margin: auto;
+    text-align: center;
+    padding: 48px 0 30px;
+}
+
+.hero-heading h1,
+.page-heading h1 {
+    font-size: clamp(2.2rem, 5vw, 4rem);
+    line-height: 1.15;
+    letter-spacing: -1px;
+}
+
+.hero-subtitle,
+.page-heading > p:last-child {
+    margin-top: 12px;
+    color: var(--muted);
+}
+
+.eyebrow {
+    margin-bottom: 8px;
+    color: var(--primary);
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.navbar {
+    width: min(1100px, 92%);
+    margin: 0 auto 30px;
+    padding: 16px 22px;
     display: flex;
-    flex-direction: row;
     justify-content: center;
-    gap: 50px;
-    list-style-type: none;
-    text-decoration: none;
     flex-wrap: wrap;
-     
+    gap: 38px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    box-shadow: var(--shadow);
 }
 
-.theme-container{
-    display:flex;
-    justify-content:flex-end;
-    margin:20px 40px;
-}
-
-#themeBtn{
-    background:#2563eb;
-    color:white;
-    border:none;
-    padding:12px 22px;
-    border-radius:30px;
-    font-size:16px;
-    font-weight:600;
-    cursor:pointer;
-    transition:.3s;
-}
-
-#themeBtn:hover{
-    background:#1d4ed8;
-    transform:scale(1.05);
-}
-
-
-li a{
+.navbar a {
+    position: relative;
+    color: var(--text);
     text-decoration: none;
-     transition: 0.3s;
-    text-transform: capitalize;
-    font-size: 20px;
+    font-weight: 600;
+    transition: color var(--transition);
 }
 
-li a:hover{
-    color: #2563eb;
-    text-decoration: underline;
-    transition: smooth 0.3s;
-     }
-
-.active{
-
-    color:#2563eb;
-
-    border-bottom:3px solid #2563eb;
-
-    padding-bottom:6px;
-
-}
- .content{
-    background: rgba(255, 255, 255, 0.75);
-    border-radius: 20px;
-    padding: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: static;
-    margin: 10px;
-    gap: 60px;
-
- }
- 
- img{
-    aspect-ratio: 1/1;
-    object-fit: cover;
-    box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.25);
-    width:320px; 
-    border: 5px solid white;
-    border-radius: 50%;
-    margin-top: 100px;
-    display:block;
-     transition: 0.3;}
-
-    .profile:hover{
-        transform:scale(1.05);
-    }
-
-#intro{ font-size: 18px; 
-    color: #444;
-    line-height: 1.8;     /*photo ke bagal me itni sgandaar tarike se content kaise likha hai. */
-    text-align: justify;
-    max-width:650px;
-}
- 
-
-.button{
-   display: flex;
-   justify-content: center;
-    align-items: center;
-    
-}  
-#gallery-button{
-    width: 200px;
-    text-align: center;
-    padding: 15px 40px;
-    font-size: 18px;
+.navbar a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -7px;
+    width: 0;
+    height: 3px;
     border-radius: 10px;
-    background-color: #2563eb;
-    transition: 0.3s;
-    cursor: pointer;
-    color: white;
-}
-button:hover{
-    background-color: #1d4ed8;
-    cursor: pointer;
-    scale: 1.05;
+    background: var(--primary);
+    transition: width var(--transition);
 }
 
+.navbar a:hover,
+.navbar a.active {
+    color: var(--primary);
+}
 
-footer{
+.navbar a:hover::after,
+.navbar a.active::after {
+    width: 100%;
+}
+
+.home-hero,
+.about-layout,
+.contact-layout {
+    width: min(1100px, 92%);
+    margin: 20px auto 60px;
+}
+
+.home-hero {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    align-items: center;
+    gap: 70px;
+    padding: 55px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
+
+.profile {
+    width: min(100%, 340px);
+    aspect-ratio: 1;
+    display: block;
+    margin: auto;
+    object-fit: cover;
+    border: 7px solid var(--surface);
+    border-radius: 50%;
+    box-shadow: var(--shadow-hover);
+    transition: transform var(--transition);
+}
+
+.profile:hover,
+.about-image:hover {
+    transform: scale(1.035);
+}
+
+.home-copy h2,
+.about-visual h2,
+.contact-info h2,
+.contact-form-card h2 {
+    margin-bottom: 20px;
+    font-size: clamp(1.8rem, 4vw, 3rem);
+    line-height: 1.2;
+}
+
+.home-copy h2 span {
+    color: var(--primary);
+}
+
+.home-copy p,
+.about-copy p,
+.contact-intro {
+    margin-bottom: 18px;
+    color: var(--muted);
+}
+
+.hero-actions {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 22px;
+    margin-top: 30px;
+}
+
+.primary-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 13px 24px;
+    border: none;
+    border-radius: 10px;
+    background: var(--primary);
+    color: #fff;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color var(--transition), transform var(--transition);
+}
+
+.primary-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-3px);
+}
+
+.primary-btn span {
+    transition: transform var(--transition);
+}
+
+.primary-btn:hover span {
+    transform: translateX(4px);
+}
+
+.text-btn {
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 700;
+}
+
+.home-note {
+    width: min(700px, 90%);
+    margin: 0 auto 60px;
     text-align: center;
-    padding: 20px;
-    background-color: #f8fafc;
-    color: #000000;
-    font-size: 14px;
+    color: var(--muted);
+    font-style: italic;
+    font-size: 1.15rem;
 }
 
-
-.dark{
-    background-color:#111827;
-    color:white;
-}
-  
-.dark .navbar ul{
-    background:#1f2937;
-    color:white;
+.footer {
+    padding: 28px 20px;
+    border-top: 1px solid var(--border);
+    color: var(--muted);
+    text-align: center;
+    font-size: 0.9rem;
 }
 
-/*
-.dark .content{
-    background:#1e293b;
+/* ABOUT */
+
+.about-layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 70px;
+    align-items: center;
 }
-*/
 
-.dark .footer{
-    background:#1f2937;
-}  
+.about-visual,
+.about-copy,
+.contact-info,
+.contact-form-card {
+    padding: 36px;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+}
 
-/* 📱 Bade Mobile
-+
-📱 Tablet (Portrait Mode)
-----------------------------------resposive design ----------------------- */
+.about-image {
+    width: min(100%, 320px);
+    aspect-ratio: 1;
+    display: block;
+    margin: 25px auto;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 6px solid var(--surface);
+    box-shadow: var(--shadow-hover);
+    transition: transform var(--transition);
+}
 
+.interest-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    color: var(--muted);
+    text-align: center;
+}
 
+.about-copy blockquote {
+    margin-top: 28px;
+    padding-left: 20px;
+    border-left: 3px solid var(--primary);
+    color: var(--primary);
+    font-size: 1.15rem;
+    font-style: italic;
+}
 
+.about-copy cite {
+    display: block;
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
 
-@media (max-width:768px){
+/* GALLERY */
 
-    h1{
-        font-size:34px;
+.gallery {
+    width: min(1300px, 92%);
+    margin: 20px auto 70px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+}
+
+.photo-card {
+    overflow: hidden;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 18px;
+    box-shadow: var(--shadow);
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.photo-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--shadow-hover);
+}
+
+.photo-link {
+    display: block;
+    overflow: hidden;
+}
+
+.photo-card img {
+    width: 100%;
+    height: 300px;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.photo-card:hover img {
+    transform: scale(1.06);
+}
+
+.caption {
+    padding: 18px 20px 20px;
+}
+
+.caption h2 {
+    font-size: 1.08rem;
+}
+
+.caption p {
+    margin-top: 4px;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* CONTACT */
+
+.contact-layout {
+    display: grid;
+    grid-template-columns: 0.85fr 1.15fr;
+    gap: 30px;
+}
+
+.contact-links {
+    display: grid;
+    gap: 12px;
+    margin-top: 28px;
+}
+
+.contact-links a {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 13px;
+    border-radius: 12px;
+    text-decoration: none;
+    transition: background-color var(--transition), transform var(--transition);
+}
+
+.contact-links a:hover {
+    background: var(--surface-soft);
+    transform: translateX(4px);
+}
+
+.contact-links a > span {
+    font-size: 1.4rem;
+}
+
+.contact-links small,
+.contact-links strong {
+    display: block;
+}
+
+.contact-links small {
+    color: var(--muted);
+}
+
+.contact-links strong {
+    color: var(--text);
+    font-size: 0.95rem;
+}
+
+.contact-form-card form {
+    display: grid;
+    gap: 18px;
+    margin-top: 28px;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+label {
+    display: grid;
+    gap: 7px;
+    color: var(--muted);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 13px 14px;
+    border: 1px solid var(--border);
+    border-radius: 9px;
+    outline: none;
+    background: var(--surface-soft);
+    color: var(--text);
+    transition: border-color var(--transition), box-shadow var(--transition);
+}
+
+textarea {
+    resize: vertical;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+.form-message {
+    min-height: 24px;
+    color: var(--primary);
+    font-weight: 600;
+}
+
+/* DARK MODE */
+
+body.dark-mode {
+    --bg: #0f172a;
+    --surface: #1e293b;
+    --surface-soft: #273449;
+    --text: #f8fafc;
+    --muted: #cbd5e1;
+    --border: #334155;
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 900px) {
+    .home-hero,
+    .about-layout,
+    .contact-layout {
+        grid-template-columns: 1fr;
     }
 
-    .content{
-        flex-direction:column;
-        align-items:center;
-        text-align:center;
+    .home-hero {
+        text-align: center;
     }
 
-    .profile{
-        width:240px;
-
-        height:240px;
-
-        margin-top: 20px;
-
-        margin-bottom:20px;
+    .hero-actions {
+        justify-content: center;
     }
 
-    .navbar ul{
-        gap:10px;
+    .gallery {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 600px) {
+    .site-header {
+        width: 90%;
     }
 
-    .gallery{
-        grid-template-columns:1fr;
-        padding:15px;
+    .hero-heading,
+    .page-heading {
+        padding-top: 30px;
     }
 
-    .content{
-
-padding:20px;
-
-gap:30px;
-
-}
-
-#intro{
-
-text-align:center;
-
-font-size:16px;
-
-}
-
-#gallery-button{
-
-width:180px;
-
-font-size:16px;
-
-}
-
-footer{
-
-padding:15px;
-
-font-size:13px;
-
-}
-
-}
-
-
- 
-
-/* 
-👉 Chhote Mobile Phones----------------for tablet------------------------- */
-
-
-
-@media (max-width:480px){
-
-    h1{
-        font-size:28px;
+    .navbar {
+        gap: 20px;
     }
 
-    header p{
-        font-size:18px;
+    .home-hero,
+    .about-visual,
+    .about-copy,
+    .contact-info,
+    .contact-form-card {
+        padding: 25px 20px;
     }
 
-    
-    .profile{
+    .gallery {
+        grid-template-columns: 1fr;
+    }
 
-width:180px;
+    .photo-card img {
+        height: 260px;
+    }
 
-height:180px;
-
-}
-
-    .content{
-
-padding:20px;
-
-gap:30px;
-
-}
-
-#intro{
-
-text-align:center;
-
-font-size:16px;
-
-}
-
-#gallery-button{
-
-width:180px;
-
-font-size:16px;
-
-}
-
-footer{
-
-padding:15px;
-
-font-size:13px;
-
-}
-
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
 }

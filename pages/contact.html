@@ -1,189 +1,418 @@
-            <!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact</title>
-    <link rel="stylesheet" href="../CSS/contactcss.css">
+
+    <title>Contact | Through My Frames</title>
+
+    <link rel="stylesheet" href="../CSS/style.css">
 </head>
+
 <body>
 
-<div class="navbar">
-    <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="gallery.html">Gallery</a></li>
-        <li><a href="contact.html" class="active">Contact</a></li>
-    </ul>
-</div>
 
-<h1>Let's Connect</h1>
+    <!-- HEADER -->
 
-<p id="tag">
-    Whether you have a question, a collaboration idea, or simply want to say hello,
-    I'd be happy to hear from you.
-</p>
+    <header class="site-header">
 
-<div class="contact">
+        <a class="brand" href="index.html">
+            throughmyframes
+        </a>
 
-    <!-- LEFT SIDE -->
 
-    <div class="contact-infrmation">
+        <button class="theme-btn" id="themeBtn" type="button">
+            🌙 Dark Mode
+        </button>
 
-        <h3>Contact Information</h3>
+    </header>
 
-        <br>
 
-        <p>
-            📧
-            <strong>Email :</strong><br>
-            <a href="mailto:honeymishra711@gmail.com">
-                honeymishra711@gmail.com
+    <main>
+
+
+        <!-- PAGE HEADING -->
+
+        <section class="page-heading">
+
+            <p class="eyebrow">
+                Let's talk
+            </p>
+
+
+            <h1>
+                Let's Connect
+            </h1>
+
+
+            <p>
+                Have a question, idea or simply want to say hello?
+            </p>
+
+        </section>
+
+
+        <!-- NAVBAR -->
+
+        <nav class="navbar" aria-label="Main navigation">
+
+            <a href="index.html">
+                Home
             </a>
-        </p>
 
-        <br>
 
-        <p>
-            📞
-            <strong>Phone :</strong><br>
-            <a href="tel:+918957500728">
-                +91 8957500728
+            <a href="about.html">
+                About
             </a>
-        </p>
 
-        <br>
 
-        <p>
-            💬
-            <strong>WhatsApp :</strong><br>
-            <a href="https://wa.me/918957500728" target="_blank">
-                Chat on WhatsApp
+            <a href="gallery.html">
+                Gallery
             </a>
-        </p>
 
-        <br>
 
-        <p>
-            📸
-            <strong>Personal Instagram :</strong><br>
-            <a href="https://instagram.com/ayush.misra711" target="_blank">
-                instagram.com/ayush.misra711
+            <a class="active" href="contact.html">
+                Contact
             </a>
-        </p>
 
-        <br>
+        </nav>
 
-        <p>
-            📷
-            <strong>Through My Frames :</strong><br>
-            <a href="https://instagram.com/throughmyframes" target="_blank">
-                instagram.com/throughmyframes
-            </a>
-        </p>
 
-        <br>
+        <!-- CONTACT SECTION -->
 
-        <p>
-            💻
-            <strong>GitHub :</strong><br>
-            <a href="https://github.com/"ayush110109mishra target="_blank">
-                github.com/ayush110109mishra
-            </a>
-        </p>
+        <section class="contact-layout">
 
-        <br>
 
-        <p>
-            🌐
-            <strong>LinkedIn :</strong><br>
-            <a href="https://linkedin.com/in/ayush-misra-66a803365" target="_blank">
-                linkedin.com/in/USERNAME
-            </a>
-        </p>
+            <!-- CONTACT INFORMATION -->
 
-        <br>
+            <div class="contact-info">
 
-        <p>
-            📍
-            <strong>Location :</strong><br>
-            Lucknow, Uttar Pradesh, India
-        </p>
+                <p class="eyebrow">
+                    Get in touch
+                </p>
 
-    </div>
 
-    <!-- RIGHT SIDE -->
+                <h2>
+                    I'd love to hear from you.
+                </h2>
 
-    <div class="contact-form">
 
-        <p id="heading">
-            Fill this form to connect with me
-        </p>
+                <p class="contact-intro">
+                    Whether you have a question, a collaboration idea or simply
+                    want to say hello, feel free to connect with me.
+                </p>
 
-        <form  id ="contactForm">
 
-            <input
-                type="text"
-                id="name"
-                placeholder="Write your name"
-                required>
+                <div class="contact-links">
 
-            <br>
 
-            <input
-                type="email"
-                id="email"
-                placeholder="Write your email"
-                required>
+                    <a href="mailto:honeymishra711@gmail.com">
 
-            <br>
+                        <span>
+                            📧
+                        </span>
 
-            <input
-                type="number"
-                id="number"
-                placeholder="Contact number"
-                required>
+                        <div>
 
-            <br>
+                            <small>
+                                Email
+                            </small>
 
-            <input
-                type="text"
-                id="subject"
-                placeholder="Subject"
-                required>
+                            <strong>
+                                honeymishra711@gmail.com
+                            </strong>
 
-            <br>
+                        </div>
 
-            <textarea
-                id="feedback"
-                rows="5"
-                placeholder="Write your message..."
-                required></textarea>
+                    </a>
 
-            <br>
 
-            <div class="submit">
-                <button id="done" type="submit">
-                    Send Message
-                </button>
+                    <a href="tel:+918957500728">
+
+                        <span>
+                            📞
+                        </span>
+
+                        <div>
+
+                            <small>
+                                Phone
+                            </small>
+
+                            <strong>
+                                +91 8957500728
+                            </strong>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="https://wa.me/918957500728"
+                        target="_blank"
+                    >
+
+                        <span>
+                            💬
+                        </span>
+
+                        <div>
+
+                            <small>
+                                WhatsApp
+                            </small>
+
+                            <strong>
+                                Chat with me
+                            </strong>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="https://instagram.com/ayush.misra711"
+                        target="_blank"
+                    >
+
+                        <span>
+                            📸
+                        </span>
+
+                        <div>
+
+                            <small>
+                                Instagram
+                            </small>
+
+                            <strong>
+                                @ayush.misra711
+                            </strong>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="https://instagram.com/throughmyframes"
+                        target="_blank"
+                    >
+
+                        <span>
+                            📷
+                        </span>
+
+                        <div>
+
+                            <small>
+                                Through My Frames
+                            </small>
+
+                            <strong>
+                                @throughmyframes
+                            </strong>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="https://github.com/ayush110109mishra"
+                        target="_blank"
+                    >
+
+                        <span>
+                            💻
+                        </span>
+
+                        <div>
+
+                            <small>
+                                GitHub
+                            </small>
+
+                            <strong>
+                                ayush110109mishra
+                            </strong>
+
+                        </div>
+
+                    </a>
+
+
+                    <a
+                        href="https://linkedin.com/in/ayush-misra-66a803365"
+                        target="_blank"
+                    >
+
+                        <span>
+                            🔗
+                        </span>
+
+                        <div>
+
+                            <small>
+                                LinkedIn
+                            </small>
+
+                            <strong>
+                                Ayush Mishra
+                            </strong>
+
+                        </div>
+
+                    </a>
+
+
+                    <div class="contact-links">
+
+                        <div>
+
+                            <small>
+                                Location
+                            </small>
+
+                            <strong>
+                                📍 Lucknow, Uttar Pradesh, India
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                </div>
+
             </div>
 
-        </form>
 
-    </div>
+            <!-- CONTACT FORM -->
 
-</div>
+            <div class="contact-form-card">
 
-<footer>
-    <p>© 2026 Through My Frames • All Rights Reserved.</p>
-</footer>
-
+                <p class="eyebrow">
+                    Send a message
+                </p>
 
 
+                <h2>
+                    Tell me what's on your mind.
+                </h2>
 
 
-<script src="../Javascript/contact.js"  defer></script>
+                <form id="contactForm">
+
+
+                    <div class="form-grid">
+
+                        <label>
+
+                            Your Name
+
+                            <input
+                                type="text"
+                                id="name"
+                                placeholder="Enter your name"
+                                required
+                            >
+
+                        </label>
+
+
+                        <label>
+
+                            Your Email
+
+                            <input
+                                type="email"
+                                id="email"
+                                placeholder="Enter your email"
+                                required
+                            >
+
+                        </label>
+
+                    </div>
+
+
+                    <label>
+
+                        Subject
+
+                        <input
+                            type="text"
+                            id="subject"
+                            placeholder="What would you like to talk about?"
+                            required
+                        >
+
+                    </label>
+
+
+                    <label>
+
+                        Message
+
+                        <textarea
+                            id="message"
+                            rows="6"
+                            placeholder="Write your message..."
+                            required
+                        ></textarea>
+
+                    </label>
+
+
+                    <button
+                        class="primary-btn"
+                        type="submit"
+                    >
+
+                        Send Message
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+
+                    <p
+                        class="form-message"
+                        id="formMessage"
+                    ></p>
+
+
+                </form>
+
+            </div>
+
+
+        </section>
+
+    </main>
+
+
+    <!-- FOOTER -->
+
+    <footer class="footer">
+
+        <p>
+            © 2026 Through My Frames • All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <script src="../Javascript/script.js"></script>
+
 </body>
+
 </html>
 
 
