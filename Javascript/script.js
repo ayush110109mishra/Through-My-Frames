@@ -6,21 +6,9 @@
 // ================================
 
 function updateThemeButton() {
-
-    const isDarkMode =
-        document.body.classList.contains("dark-mode");
-
-
-    if (isDarkMode) {
-
-        themeBtn.innerText = "☀️ Light Mode";
-
-    } else {
-
-        themeBtn.innerText = "🌙 Dark Mode";
-
-    }
-
+    if (!themeBtn) return;
+    const isDarkMode = document.body.classList.contains("dark-mode");
+    themeBtn.innerText = isDarkMode ? "☀️ Light Mode" : "🌙 Dark Mode";
 }
 
 
@@ -30,11 +18,8 @@ function updateThemeButton() {
 
 const savedTheme = localStorage.getItem("theme");
 
-
 if (savedTheme === "dark") {
-
     document.body.classList.add("dark-mode");
-
 }
 
 
@@ -42,29 +27,14 @@ if (savedTheme === "dark") {
 // THEME TOGGLE
 // ================================
 
-themeBtn.addEventListener("click", function () {
-
-    document.body.classList.toggle("dark-mode");
-
-
-    const isDarkMode =
-        document.body.classList.contains("dark-mode");
-
-
-    if (isDarkMode) {
-
-        localStorage.setItem("theme", "dark");
-
-    } else {
-
-        localStorage.setItem("theme", "light");
-
-    }
-
-
-    updateThemeButton();
-
-});
+if (themeBtn) {
+    themeBtn.addEventListener("click", function () {
+        document.body.classList.toggle("dark-mode");
+        const isDarkMode = document.body.classList.contains("dark-mode");
+        localStorage.setItem("theme", isDarkMode ? "dark" : "light");
+        updateThemeButton();
+    });
+}
 
 
 // ================================
@@ -347,24 +317,104 @@ const frames = [
 
 ];
 
-console.log(frames);
-
 // ===============================
-// create a card for each frame
+// LIGHTBOX SETUP & CONTROLLER
 // ===============================
 
- 
+const lightbox = document.querySelector("#lightbox");
+const lightboxImage = document.querySelector("#lightboxImage");
+const lightboxTitle = document.querySelector("#lightboxTitle");
+const lightboxCategory = document.querySelector("#lightboxCategory");
+const lightboxClose = document.querySelector("#lightboxClose");
+const lightboxPrev = document.querySelector("#lightboxPrev");
+const lightboxNext = document.querySelector("#lightboxNext");
 
- function renderFrames(framesToRender) {
+let currentIndex = 0;
+let currentFrames = frames;
+
+function openLightbox(index) {
+    if (!lightbox || !lightboxImage || !currentFrames || currentFrames.length === 0) return;
+    currentIndex = index;
+    if (currentIndex < 0) currentIndex = currentFrames.length - 1;
+    if (currentIndex >= currentFrames.length) currentIndex = 0;
+
+    const frame = currentFrames[currentIndex];
+    if (!frame) return;
+
+    lightboxImage.src = frame.image;
+    lightboxImage.alt = frame.title;
+    if (lightboxTitle) lightboxTitle.textContent = frame.title;
+    if (lightboxCategory) lightboxCategory.textContent = frame.category;
+
+    lightbox.classList.add("active");
+    document.body.style.overflow = "hidden";
+}
+
+function closeLightbox() {
+    if (!lightbox) return;
+    lightbox.classList.remove("active");
+    document.body.style.overflow = "";
+}
+
+function showNext() {
+    openLightbox(currentIndex + 1);
+}
+
+function showPrev() {
+    openLightbox(currentIndex - 1);
+}
+
+if (lightboxClose) {
+    lightboxClose.addEventListener("click", closeLightbox);
+}
+
+if (lightboxNext) {
+    lightboxNext.addEventListener("click", (e) => {
+        e.stopPropagation();
+        showNext();
+    });
+}
+
+if (lightboxPrev) {
+    lightboxPrev.addEventListener("click", (e) => {
+        e.stopPropagation();
+        showPrev();
+    });
+}
+
+if (lightbox) {
+    lightbox.addEventListener("click", (e) => {
+        if (e.target === lightbox) {
+            closeLightbox();
+        }
+    });
+}
+
+document.addEventListener("keydown", (e) => {
+    if (!lightbox || !lightbox.classList.contains("active")) return;
+    if (e.key === "Escape") closeLightbox();
+    if (e.key === "ArrowRight") showNext();
+    if (e.key === "ArrowLeft") showPrev();
+});
+
+
+// ===============================
+// RENDER GALLERY FRAMES
+// ===============================
+
+function renderFrames(framesToRender) {
+    if (!gallery) return;
 
     currentFrames = framesToRender;
-
     gallery.innerHTML = "";
 
-    framesToRender.forEach((frame) => {
+    if (framesToRender.length === 0) {
+        gallery.innerHTML = `<p class="no-results" style="grid-column: 1/-1; text-align: center; color: var(--muted); font-size: 1.1rem; padding: 40px 0;">No frames found matching your search.</p>`;
+        return;
+    }
 
+    framesToRender.forEach((frame, idx) => {
         const card = document.createElement("article");
-
         card.classList.add("photo-card");
 
         card.innerHTML = `
@@ -373,128 +423,73 @@ console.log(frames);
                 alt="${frame.title}"
                 loading="lazy"
             >
-
             <div class="caption">
                 <h2>${frame.title}</h2>
                 <p>${frame.category}</p>
             </div>
         `;
 
-
-         card.addEventListener("click", () => {
-
-    const index = currentFrames.indexOf(frame);
-
-    openLightbox(index);
-
-});
-
-    lightboxClose.addEventListener("click", () => {
-    lightbox.classList.remove("active");
-});
-
-
-const lightboxPrev = document.querySelector("#lightboxPrev");
-const lightboxNext = document.querySelector("#lightboxNext");
-
-});
-
-
- 
- 
+        card.addEventListener("click", () => {
+            openLightbox(idx);
+        });
 
         gallery.appendChild(card);
+    });
+}
+
+if (gallery) {
+    renderFrames(frames);
 }
 
 
-renderFrames(frames);
-
-
- 
-
-
 // ===============================
-    // search bar
+// SEARCH BAR
 // ===============================
 
 const searchInput = document.querySelector("#gallerySearch");
- 
 
-searchInput.addEventListener("input", () => {
+if (searchInput) {
+    searchInput.addEventListener("input", () => {
+        const searchTerm = searchInput.value.toLowerCase().trim();
 
-    const searchTerm = searchInput.value.toLowerCase().trim();
+        const searchedFrames = frames.filter((frame) => {
+            return (
+                (frame.title && frame.title.toLowerCase().includes(searchTerm)) ||
+                (frame.category && frame.category.toLowerCase().includes(searchTerm)) ||
+                (frame.type && frame.type.toLowerCase().includes(searchTerm))
+            );
+        });
 
-    const searchedFrames = frames.filter((frame) => {
-
-        return (
-            frame.title.toLowerCase().includes(searchTerm) ||
-            frame.category.toLowerCase().includes(searchTerm) ||
-            frame.type.toLowerCase().includes(searchTerm)
-        );
-
+        renderFrames(searchedFrames);
     });
-
-    renderFrames(searchedFrames);
-
-});
+}
 
 
 // ===============================
-// category filter
+// CATEGORY FILTER
 // ===============================
 
 const filterButtons = document.querySelectorAll(".filter-btn");
 
-filterButtons.forEach((button) => {
+if (filterButtons.length > 0) {
+    filterButtons.forEach((button) => {
+        button.addEventListener("click", () => {
+            const selectedFilter = button.dataset.filter ? button.dataset.filter.toLowerCase() : "all";
 
-    button.addEventListener("click", () => {
+            filterButtons.forEach((btn) => {
+                btn.classList.remove("active");
+            });
 
-        const selectedFilter = button.dataset.filter;
+            button.classList.add("active");
 
-        filterButtons.forEach((btn) => {
-            btn.classList.remove("active");
+            const filteredFrames =
+                selectedFilter === "all"
+                    ? frames
+                    : frames.filter(
+                        (frame) => frame.type && frame.type.toLowerCase() === selectedFilter
+                    );
+
+            renderFrames(filteredFrames);
         });
-
-        button.classList.add("active");
-
-        const filteredFrames =
-            selectedFilter === "all"
-                ? frames
-                : frames.filter(
-                    (frame) => frame.type === selectedFilter
-                );
-
-         renderFrames(filteredFrames);
     });
-
-});
-
-
-// ==============================
-// light box functionality
-// ==============================
-
-const lightbox = document.querySelector("#lightbox");
-const lightboxImage = document.querySelector("#lightboxImage");
-const lightboxTitle = document.querySelector("#lightboxTitle");
-const lightboxCategory = document.querySelector("#lightboxCategory");
-const lightboxClose = document.querySelector("#lightboxClose");
-
-
-let currentIndex = 0;
-let currentFrames = frames;
-
-function openLightbox(index) {
-
-    currentIndex = index;
-
-    const frame = currentFrames[currentIndex];
-
-    lightboxImage.src = frame.image;
-    lightboxImage.alt = frame.title;
-
-    lightboxTitle.textContent = frame.title;
-    lightboxCategory.textContent = frame.category;
-
-    lightbox.classList.add("active");
 }
