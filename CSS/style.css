@@ -332,25 +332,71 @@ button {
 
 
 .gallery-search {
-    width: 100%;
+    width: min(1100px, 92%);
+    margin: 0 auto 16px;
     display: flex;
     justify-content: center;
-    margin-bottom: 20px;
 }
 
 .gallery-search input {
-    width: min(500px, 90%);
-    padding: 12px 18px;
-    border: 1px solid var(--border-color);
-    border-radius: 10px;
-    font-size: 1rem;
-    background: var(--card-bg);
-    color: var(--text-color);
+    width: min(520px, 100%);
+    padding: 13px 24px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    font-size: 0.98rem;
+    background: var(--surface);
+    color: var(--text);
+    box-shadow: var(--shadow);
     outline: none;
+    transition: border-color var(--transition), box-shadow var(--transition);
 }
 
 .gallery-search input:focus {
-    border-color: var(--accent-color);
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.15);
+}
+
+.gallery-search input::placeholder {
+    color: var(--muted);
+}
+
+/* GALLERY FILTERS */
+
+.gallery-filters {
+    width: min(1100px, 92%);
+    margin: 10px auto 35px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 12px;
+}
+
+.filter-btn {
+    padding: 10px 22px;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    color: var(--muted);
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    box-shadow: 0 2px 10px rgba(15, 23, 42, 0.04);
+    transition: all var(--transition);
+}
+
+.filter-btn:hover {
+    color: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(37, 99, 235, 0.15);
+}
+
+.filter-btn.active {
+    background: var(--primary);
+    color: #ffffff;
+    border-color: var(--primary);
+    box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
+    transform: translateY(-1px);
 }
 
 .gallery {
@@ -633,4 +679,15 @@ body.dark-mode {
     .form-grid {
         grid-template-columns: 1fr;
     }
+
+    .gallery-filters {
+        gap: 8px;
+        margin-bottom: 25px;
+    }
+
+    .filter-btn {
+        padding: 8px 16px;
+        font-size: 0.88rem;
+    }
 }
+
