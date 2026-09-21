@@ -329,6 +329,30 @@ button {
 
 /* GALLERY */
 
+
+
+.gallery-search {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.gallery-search input {
+    width: min(500px, 90%);
+    padding: 12px 18px;
+    border: 1px solid var(--border-color);
+    border-radius: 10px;
+    font-size: 1rem;
+    background: var(--card-bg);
+    color: var(--text-color);
+    outline: none;
+}
+
+.gallery-search input:focus {
+    border-color: var(--accent-color);
+}
+
 .gallery {
     width: min(1300px, 92%);
     margin: 20px auto 70px;
@@ -380,6 +404,72 @@ button {
     margin-top: 4px;
     color: var(--muted);
     font-size: 0.9rem;
+}
+
+
+/* ===============================
+   LIGHTBOX
+================================ */
+
+.lightbox {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: none;
+    align-items: center;
+    justify-content: center;
+
+    padding: 40px;
+
+    background: rgba(0, 0, 0, 0.9);
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 80vh;
+
+    width: auto;
+    height: auto;
+
+    object-fit: contain;
+}
+
+.lightbox-close {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+
+    border: none;
+    background: transparent;
+
+    color: white;
+    font-size: 40px;
+
+    cursor: pointer;
+}
+
+.lightbox-caption {
+    position: absolute;
+    bottom: 25px;
+    left: 0;
+    right: 0;
+
+    text-align: center;
+    color: white;
+}
+
+.lightbox-caption h2 {
+    margin: 0 0 5px;
+}
+
+.lightbox-caption p {
+    margin: 0;
+    opacity: 0.75;
 }
 
 /* CONTACT */
